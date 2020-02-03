@@ -1,0 +1,22 @@
+pkgbase = kimera-vio
+	pkgdesc = Visual Inertial Odometry pipeline for accurate State Estimation from Stereo/Mono + IMU data
+	pkgver = 5.0
+	pkgrel = 2
+	url = https://github.com/MIT-SPARK/kimera-vio
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = cmake
+	depends = gtsam
+	depends = opencv
+	depends = opengv
+	depends = dbow2
+	depends = google-glog
+	depends = gflags
+	depends = gtest
+	depends = kimera-rpgo
+	source = https://github.com/MIT-SPARK/kimera-vio/archive/v5.0.tar.gz
+	sha256sums = 6c9af01a6bd84018aab746c2ad120fede3efe391a77b118716ca9e47775e351b
+
+pkgname = kimera-vio
+
