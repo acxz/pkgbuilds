@@ -1,0 +1,48 @@
+pkgbase = gazebo-hg
+	pkgdesc = A multi-robot simulator for outdoor environments. Mercurial version.
+	pkgver = 11.0.0.38902
+	pkgrel = 1
+	url = http://gazebosim.org/
+	install = gazebo.install
+	arch = i686
+	arch = x86_64
+	license = Apache
+	makedepends = cmake
+	makedepends = doxygen
+	makedepends = ignition-cmake>=2
+	makedepends = mercurial
+	depends = boost
+	depends = curl
+	depends = freeglut
+	depends = freeimage
+	depends = intel-tbb
+	depends = libccd
+	depends = libltdl
+	depends = libtar
+	depends = libxml2
+	depends = ogre=1.9
+	depends = protobuf
+	depends = sdformat>=9
+	depends = ignition-math>=6
+	depends = ignition-transport>=8
+	depends = ignition-common>=3
+	depends = ignition-fuel_tools>=4
+	depends = ignition-msgs>=5
+	depends = tinyxml2
+	depends = qwt
+	optdepends = bullet: Bullet support
+	optdepends = cegui: Design custom graphical interfaces
+	optdepends = ffmpeg: Playback movies on textured surfaces
+	optdepends = gdal: Digital elevation terrains support
+	optdepends = libdart: DART support
+	optdepends = libspnav: space navigator joystick support
+	optdepends = libusb: USB peripherals support
+	optdepends = ruby-ronn: Generate manpages
+	optdepends = simbody: Simbody support
+	optdepends = urdfdom: Load URDF files
+	provides = gazebo
+	source = gazebo::hg+https://bitbucket.org/osrf/gazebo#branch=default
+	md5sums = SKIP
+
+pkgname = gazebo-hg
+
