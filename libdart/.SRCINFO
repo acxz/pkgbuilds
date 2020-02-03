@@ -1,0 +1,32 @@
+pkgbase = libdart
+	pkgdesc = Dynamic Animation and Robotics Toolkit
+	pkgver = 6.9.2
+	pkgrel = 1
+	url = https://dartsim.github.io
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = cmake
+	depends = assimp
+	depends = boost
+	depends = eigen
+	depends = fcl
+	depends = libccd
+	optdepends = bullet: Bullet collision detection support
+	optdepends = coin-or-ipopt: Ipopt optimizer support
+	optdepends = flann: planning module support
+	optdepends = nlopt: NLopt optimizer support
+	optdepends = octomap: voxel grid shape support
+	optdepends = ode: ODE collision detection support
+	optdepends = openscenegraph: required for dart-gui-osg
+	optdepends = pagmo: pagmo optimizer support
+	optdepends = tinyxml2: parser support
+	optdepends = urdfdom: urdf parser support
+	optdepends = freeglut: GLUT GUI support
+	optdepends = libxi: GLUT GUI support
+	optdepends = libxmu: GLUT GUI support
+	source = https://github.com/dartsim/dart/archive/v6.9.2.tar.gz
+	sha256sums = 7d46d23c04d74d3b78331f9fa7deb5ab32fd4b0c03b93548cd84a2d67771d816
+
+pkgname = libdart
+
