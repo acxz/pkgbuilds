@@ -1,0 +1,20 @@
+pkgbase = simbody
+	pkgdesc = High-performance C++ multibody dynamics/physics library for simulating articulated biomechanical and mechanical systems like vehicles, robots, and the human skeleton.
+	pkgver = 3.6.1
+	pkgrel = 3
+	url = https://simtk.org/home/simbody
+	arch = i686
+	arch = x86_64
+	license = Apache
+	makedepends = cmake
+	depends = lapack
+	depends = blas
+	optdepends = freeglut
+	optdepends = libxi
+	optdepends = libxmu
+	optdepends = doxygen
+	source = https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz
+	sha256sums = 7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639
+
+pkgname = simbody
+
