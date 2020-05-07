@@ -26,7 +26,7 @@ pkgver() {
 
 _buildtype="Release"
 
-_cmake_options=()
+_cmake_options=(-DPAGMO_ENABLE_IPO=yes)
 
 check_optdepends() {
 
