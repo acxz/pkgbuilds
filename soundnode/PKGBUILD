@@ -15,7 +15,7 @@ sha256sums=('f2c4ce7c8ad56ff56a48c048078c9653500a86430fb21159ae734bee51725d5a')
 build() {
     cd soundnode-app-$pkgver
     npm i
-    npm run package;linux
+    npm run package:linux
 }
 
 package() {
