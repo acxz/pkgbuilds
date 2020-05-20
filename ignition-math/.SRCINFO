@@ -10,8 +10,10 @@ pkgbase = ignition-math
 	makedepends = ignition-cmake>=2
 	depends = gcc-libs
 	optdepends = eigen
-	source = ignition-math-6.4.0::https://github.com/ignitionrobotics/ign-math/archive/ignition-math6_6.4.0.tar.gz
+	source = ignition-math-6.4.0.tar.gz::https://github.com/ignitionrobotics/ign-math/archive/ignition-math6_6.4.0.tar.gz
+	source = headerfix.patch
 	sha256sums = 2961b295c61c7536a10b4e87c1fb812d111ee923e1c83bb6a42dede7d76373c5
+	sha256sums = 4d64ecf1a980885e7dfa93566775accb86de387c638788add66e0be00863eb96
 
 pkgname = ignition-math
 

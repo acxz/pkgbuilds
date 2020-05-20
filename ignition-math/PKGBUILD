@@ -13,11 +13,17 @@ depends=('gcc-libs')
 makedepends=('ignition-cmake>=2')
 optdepends=('eigen')
 conflicts=()
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ignitionrobotics/ign-math/archive/${pkgname}6_${pkgver}.tar.gz")
-sha256sums=("2961b295c61c7536a10b4e87c1fb812d111ee923e1c83bb6a42dede7d76373c5")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ignitionrobotics/ign-math/archive/${pkgname}6_${pkgver}.tar.gz"
+"headerfix.patch")
+sha256sums=('2961b295c61c7536a10b4e87c1fb812d111ee923e1c83bb6a42dede7d76373c5'
+            '4d64ecf1a980885e7dfa93566775accb86de387c638788add66e0be00863eb96')
 
 _dir="ign-math-${pkgname}6_${pkgver}"
 
+prepare() {
+    cd "$srcdir"
+    patch --forward --strip=1 --input="${srcdir}/headerfix.patch"
+}
 build() {
   cd "$srcdir/$_dir"
 
@@ -39,3 +45,4 @@ package() {
   cd "$srcdir/$_dir/build"
   make DESTDIR="$pkgdir/" install
 }
+
