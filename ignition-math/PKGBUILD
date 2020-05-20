@@ -3,7 +3,7 @@
 # Contributor: Ramdambo <https://github.com/Ramdambo>
 pkgname=ignition-math
 pkgver=6.4.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Math classes and functions for robot applications"
 arch=('i686' 'x86_64')
 url="https://ignitionrobotics.org/libs/math"
