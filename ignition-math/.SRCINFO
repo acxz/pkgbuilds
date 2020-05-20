@@ -13,6 +13,7 @@ pkgbase = ignition-math
 	source = ignition-math-6.4.0.tar.gz::https://github.com/ignitionrobotics/ign-math/archive/ignition-math6_6.4.0.tar.gz
 	source = headerfix.patch::https://github.com/ignitionrobotics/ign-math/commit/fdbd226d70885e85e265d7c61cfa9014bee1a33a.patch
 	sha256sums = 2961b295c61c7536a10b4e87c1fb812d111ee923e1c83bb6a42dede7d76373c5
-	sha256sums = 4d64ecf1a980885e7dfa93566775accb86de387c638788add66e0be00863eb96
+	sha256sums = 9e1619ca8a04ecce7f0fce4779344657670cf4dea2e207136c83cab95c53ddde
 
 pkgname = ignition-math
+
