@@ -16,4 +16,3 @@ pkgbase = ignition-math
 	sha256sums = 4d64ecf1a980885e7dfa93566775accb86de387c638788add66e0be00863eb96
 
 pkgname = ignition-math
-
