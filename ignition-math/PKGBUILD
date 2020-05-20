@@ -1,8 +1,9 @@
 # Maintainer: acxz <akashpatel2008 at yahoo dot com>
 # Contributor: Mykola Dolhyi <0xb000@gmail.com>
+# Contributor: Ramdambo <https://github.com/Ramdambo>
 pkgname=ignition-math
-pkgver=7.0.0
-pkgrel=3
+pkgver=6.4.0
+pkgrel=4
 pkgdesc="Math classes and functions for robot applications"
 arch=('i686' 'x86_64')
 url="https://ignitionrobotics.org/libs/math"
@@ -12,10 +13,10 @@ depends=('gcc-libs')
 makedepends=('ignition-cmake>=2')
 optdepends=('eigen')
 conflicts=()
-source=("https://github.com/ignitionrobotics/ign-math/archive/master.tar.gz")
-sha256sums=("71ba696313c6273c1cc85811f0e762f36b79912291f7b483e2fc4e2db60f4775")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ignitionrobotics/ign-math/archive/${pkgname}6_${pkgver}.tar.gz")
+sha256sums=("2961b295c61c7536a10b4e87c1fb812d111ee923e1c83bb6a42dede7d76373c5")
 
-_dir="ign-math-master"
+_dir="ign-math-${pkgname}6_${pkgver}"
 
 build() {
   cd "$srcdir/$_dir"
@@ -32,6 +33,7 @@ build() {
   # Compile
   make
 }
+
 
 package() {
   cd "$srcdir/$_dir/build"
