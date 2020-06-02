@@ -28,7 +28,6 @@ build(){
   gcc ${CFLAGS} -o showme showme.c -lX11
 }
 
-
 package_triangle() {
   url='http://www.cs.cmu.edu/~quake/triangle.html'
   pkgdesc='A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator.'
