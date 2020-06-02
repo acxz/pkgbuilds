@@ -1,0 +1,17 @@
+--- triangle.h.orig	2020-06-02 10:36:40.378051634 +0200
++++ triangle.h.new	2020-06-02 10:46:13.153369802 +0200
+@@ -248,6 +248,14 @@
+ /*                                                                           */
+ /*****************************************************************************/
+ 
++#ifdef SINGLE
++#define REAL float
++#else /* not SINGLE */
++#define REAL double
++#endif /* not SINGLE */
++
++#define VOID int
++
+ struct triangulateio {
+   REAL *pointlist;                                               /* In / out */
+   REAL *pointattributelist;                                      /* In / out */
