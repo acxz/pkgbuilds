@@ -16,7 +16,7 @@ conflicts=()
 source=("https://github.com/ignitionrobotics/ign-tools/archive/${pkgname}_${pkgver}.tar.gz")
 sha256sums=('ea7036e73ad7893fee7c7dc06e1760f11e0cac57c024886a371359ce2768cce7')
 
-_dir="ignitionrobotics-ign-tools-db789c2424b4"
+_dir="ign-tools-ignition-tools_1.0.0"
 
 build() {
   cd "$srcdir/$_dir"
