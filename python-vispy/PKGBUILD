@@ -10,7 +10,7 @@ arch=('any')
 url='http://vispy.org'
 license=('BSD')
 depends=('python-numpy')
-makedepends=('python-setuptools' 'cython')
+makedepends=('python-setuptools' 'cython' 'npm')
 optdepends=('pyside2: a possible backend'
             'python-pyqt5: a possible backend')
 _pkgname=vispy
