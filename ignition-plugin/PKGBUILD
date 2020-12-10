@@ -1,0 +1,37 @@
+# Maintainer: acxz <akashpatel2008 at yahoo dot com>
+
+pkgname=ignition-plugin
+pkgver=1.1.0
+pkgrel=1
+pkgdesc="Cross-platform C++ library for dynamically loading plugins."
+arch=('x86_64')
+url="https://ignitionrobotics.org/libs/plugin"
+license=('Apache')
+depends=()
+makedepends=('cmake')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ignitionrobotics/ign-plugin/archive/${pkgname}_${pkgver}.tar.gz")
+sha256sums=('ce089cd6924c460d16591f4d3983b282f2f05ed8b5588f7ede9a91dbd43bd5d7')
+
+_dir="ign-plugin-${pkgname}_${pkgver}"
+
+build() {
+  cd "$srcdir/$_dir"
+
+  mkdir -p build
+  cd build
+
+  # Configure build
+  cmake .. -DCMAKE_BUILD_TYPE="Release" \
+           -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr" \
+           -DCMAKE_INSTALL_LIBDIR="lib" \
+           -DBUILD_TESTING=OFF
+
+  # Compile
+  make
+}
+
+package() {
+  cd "$srcdir/$_dir/build"
+  #make DESTDIR="$pkgdir/" install
+  make install
+}
