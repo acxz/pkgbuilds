@@ -20,6 +20,7 @@ sha256sums=(
 prepare() {
     # Fix a bug in the half.hpp include file not enabling F16C intrinsics
     # correctly when the architecture supports it
+    # https://github.com/acxz/pkgbuilds/issues/94
     patch -p0 ${srcdir}/include/half.hpp < f16c_fix.patch
 }
 
