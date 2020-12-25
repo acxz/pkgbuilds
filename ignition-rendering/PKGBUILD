@@ -2,7 +2,7 @@
 
 pkgname=ignition-rendering
 pkgver=4.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="C++ library designed to provide an abstraction for different rendering
 engines. It offers unified APIs for creating 3D graphics applications."
 arch=('x86_64')

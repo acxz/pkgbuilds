@@ -2,7 +2,7 @@
 
 pkgname=ignition-physics
 pkgver=3.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Abstract physics interface designed to support simulation and rapid
 development of robot applications."
 arch=('x86_64')
