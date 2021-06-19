@@ -34,7 +34,6 @@ build() {
   cd "${srcdir}/${_dir}-${pkgver}/${_pkgname}"
   mkdir -p build && cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_BUILD_TYPE=Release \
         -DPYTHON_VERSION=3 \
         ..
   make

@@ -19,9 +19,7 @@ _pkgname=orocos_kdl
 build() {
   cd "${srcdir}/${_dir}-${pkgver}/${_pkgname}"
 
-  cmake -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_BUILD_TYPE=Release \
-        .
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .
   make
 }
 
