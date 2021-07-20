@@ -7,7 +7,7 @@
 # Contributor: Bjorn Lindeijer <bjorn@lindeijer.nl>
 
 pkgname=cegui
-pkgver=0.8.7
+pkgver=0.8.8
 pkgrel=14
 pkgdesc="A free library providing windowing and widgets for graphics APIs/engines"
 arch=('i686' 'x86_64')
