@@ -36,8 +36,10 @@ pkgname = ogre-1.9
 	optdepends = python: python bindings
 	optdepends = ogre-docs: documentation
 	provides = ogre=1.9
+	conflicts = ogre>=1.0
 
 pkgname = ogre-docs-1.9
 	pkgdesc = Documentation for ogre
 	depends = 
 	provides = ogre-docs=1.9
+	conflicts = ogre-docs>=1.0

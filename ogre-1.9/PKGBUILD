@@ -48,10 +48,10 @@ build() {
 
 package_ogre-1.9() {
   provides=('ogre=1.9')
+  conflicts=('ogre>=1.0')
   optdepends=('cppunit: unit testing'
               'python: python bindings'
               'ogre-docs: documentation')
-
   cd ogre-${pkgver}/build
 
   make DESTDIR=${pkgdir} install
@@ -64,6 +64,7 @@ package_ogre-1.9() {
 
 package_ogre-docs-1.9() {
   provides=('ogre-docs=1.9')
+  conflicts=('ogre-docs>=1.0')
   pkgdesc="Documentation for ogre"
   depends=()
 
