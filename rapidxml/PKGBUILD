@@ -8,7 +8,7 @@ url=""
 license=('Boost/MIT')
 provides=("rapidxml")
 _pkgname="RapidXml"
-source=("git://github.com/hydranix/RapidXml"
+source=("git+https://github.com/hydranix/RapidXml"
         "0001-fix-for-a-bug-in-gcc-that-won-t-let-rapidxml-compile.patch")
 
 md5sums=('SKIP'
