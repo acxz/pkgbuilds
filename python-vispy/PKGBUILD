@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python-numpy' 'python-freetype-py' 'python-hsluv' 'python-kiwisolver')
 makedepends=('python' 'python-build' 'python-installer' 'python-wheel'
              'python-setuptools' 'python-numpy' 'cython' 'python-setuptools-scm'
-             'python-setuptools-scm-git-archive' 'npm'
+             'npm'
              'python-oldest-supported-numpy')
 optdepends=('ipython: ipython-static'
             'python-pyglet: pyglet'
@@ -28,6 +28,8 @@ sha256sums=('c621d3edf7dff445ebaff2fbece244db77db821e2e0c0e59c83ea9cc6666d99e')
 
 build() {
     cd "$srcdir/${_pkgname}-${pkgver}"
+    sed -i "s/'setuptools_scm_git_archive',//g" setup.py
+    sed -i 's/"setuptools_scm_git_archive",//g' pyproject.toml
     python -m build --wheel --no-isolation
 }
 

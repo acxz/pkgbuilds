@@ -13,7 +13,6 @@ pkgbase = python-vispy
 	makedepends = python-numpy
 	makedepends = cython
 	makedepends = python-setuptools-scm
-	makedepends = python-setuptools-scm-git-archive
 	makedepends = npm
 	makedepends = python-oldest-supported-numpy
 	depends = python-numpy
