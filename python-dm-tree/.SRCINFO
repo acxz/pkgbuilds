@@ -14,7 +14,7 @@ pkgbase = python-dm-tree
 	makedepends = git
 	depends = python
 	depends = python-six
-	source = python-dm-tree-0.1.8::https://pypi.org/packages/source/d/dm-tree/dm-tree-0.1.8.tar.gz
+	source = python-dm-tree-0.1.8.tar.gz::https://pypi.org/packages/source/d/dm-tree/dm-tree-0.1.8.tar.gz
 	sha256sums = 0fcaabbb14e7980377439e7140bd05552739ca5e515ecb3119f234acee4b9430
 
 pkgname = python-dm-tree
