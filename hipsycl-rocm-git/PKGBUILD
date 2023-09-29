@@ -2,18 +2,21 @@
 # Maintainer: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=hipsycl-rocm-git
-pkgver=r2006.d9b45cd4
+pkgver=r2241.aa00030b
 pkgrel=1
 pkgdesc="Multi-backend implementation of SYCL for CPUs and GPUs"
 arch=("x86_64")
-url="https://github.com/OpenSYCL/OpenSYCL"
+url="https://github.com/AdaptiveCpp/AdaptiveCpp"
 license=("BSD")
 provides=(hipsycl-rocm hipsycl sycl)
 makedepends=(cmake git)
-depends=(llvm clang python boost hipcpu openmp hip-runtime-amd rocm-hip-sdk)
-_pkgname=opensycl
-source=("${_pkgname}::git+https://github.com/OpenSYCL/OpenSYCL.git")
-sha256sums=('SKIP')
+depends=(llvm lld clang boost openmp python hip-runtime-amd rocm-hip-sdk)
+_pkgname=adaptivecpp
+source=("${_pkgname}::git+${url}.git"
+        "llvmspirv_installdir.patch")
+sha256sums=('SKIP'
+            '5d29e81867ecc51afb8cee586162664ea30a407b6e31f8d770427ad8c2b42bf1')
+
 
 pkgver() {
     cd "${_pkgname}"
@@ -21,8 +24,8 @@ pkgver() {
 }
 
 prepare() {
-    # Delete the install lines for contrib hip and hipcpu
-    sed -i '/contrib/d' ${srcdir}/${_pkgname}/CMakeLists.txt
+    patch --directory="${srcdir}/${_pkgname}" --forward --strip=1 \
+      --input="${srcdir}/llvmspirv_installdir.patch"
 }
 
 build() {
@@ -30,9 +33,10 @@ build() {
     cd ${srcdir}/${_pkgname}/build
 
     cmake .. -DCMAKE_BUILD_TYPE=Release \
-          -DCMAKE_INSTALL_PREFIX=/opt/hipSYCL/ROCm \
+          -DCMAKE_INSTALL_PREFIX=/opt/AdaptiveCpp/ROCm \
           -DWITH_CUDA_BACKEND=OFF \
           -DWITH_ROCM_BACKEND=ON \
+          -DHIPCC_COMPILER=/opt/rocm/bin/hipcc \
           -DWITH_CPU_BACKEND=ON
 
     make
