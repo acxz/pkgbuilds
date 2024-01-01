@@ -1,0 +1,22 @@
+diff --git a/src/compiler/llvm-to-backend/CMakeLists.txt b/src/compiler/llvm-to-backend/CMakeLists.txt
+index 3e303abb..c60790ee 100644
+--- a/src/compiler/llvm-to-backend/CMakeLists.txt
++++ b/src/compiler/llvm-to-backend/CMakeLists.txt
+@@ -114,7 +114,7 @@ if(WITH_SSCP_COMPILER)
+       set(LLVMSPIRV_BRANCH llvm_release_${LLVM_VERSION_MAJOR}0)
+     endif()
+     set(LLVMSPIRV_RELATIVE_INSTALLDIR lib/hipSYCL/ext/llvm-spirv)
+-    set(LLVMSPIRV_INSTALLDIR ${CMAKE_INSTALL_PREFIX}/${LLVMSPIRV_RELATIVE_INSTALLDIR})
++    set(LLVMSPIRV_INSTALLDIR ${CMAKE_CURRENT_BINARY_DIR}/${LLVMSPIRV_RELATIVE_INSTALLDIR})
+     set(LLVMSPIRV_PATH ${LLVMSPIRV_INSTALLDIR}/bin/llvm-spirv)
+     set(LLVMSPIRV_RELATIVE_PATH ${LLVMSPIRV_RELATIVE_INSTALLDIR}/bin/llvm-spirv)
+ 
+@@ -134,6 +134,8 @@ if(WITH_SSCP_COMPILER)
+     PATCH_COMMAND patch -N -p0 -c --fuzz=4 --ignore-whitespace -i llvm-spirv.patch lib/SPIRV/SPIRVInternal.h ${CMAKE_CURRENT_SOURCE_DIR}/spirv/llvm-spirv.patch || true
+     )
+ 
++    set_target_properties(LLVMSpirvTranslator PROPERTIES EXCLUDE_FROM_ALL TRUE)
++
+     target_compile_definitions(llvm-to-spirv PRIVATE
+       -DHIPSYCL_RELATIVE_LLVMSPIRV_PATH="${LLVMSPIRV_RELATIVE_PATH}")
+   endif()
