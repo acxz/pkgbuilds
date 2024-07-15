@@ -10,13 +10,21 @@ license=('MIT')
 depends=('python')
 makedepends=('python' 'python-build' 'python-installer' 'python-wheel'
              'python-setuptools')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/rusty1s/pytorch_scatter/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('6f375dbc9cfe03f330aa29ea553e9c7432e9b040d039b041f08bf05df1a8bf37')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/rusty1s/pytorch_scatter/archive/refs/tags/$pkgver.tar.gz" "0001_add_glog_export_flags.patch")
+sha256sums=('6f375dbc9cfe03f330aa29ea553e9c7432e9b040d039b041f08bf05df1a8bf37'
+'d36abaa3d10bf5bd788ce669db6cfd7a9b2a6c4b271c37ffb772173cba9ac9a9')
 
 _pkgname=pytorch_scatter
 
+prepare() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+  patch -p0 -i ../0001_add_glog_export_flags.patch
+}
+
 build() {
   cd "${srcdir}/${_pkgname}-${pkgver}"
+  unset CFLAGS
+  unset CXXFLAGS
   python -m build --wheel --no-isolation
 }
 
