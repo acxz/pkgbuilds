@@ -11,13 +11,21 @@ license=('MIT')
 depends=('python' 'python-scipy')
 makedepends=('python' 'python-build' 'python-installer' 'python-wheel'
              'python-setuptools' 'parallel-hashmap')
-source=("$pkgname-$pkgver::https://github.com/rusty1s/pytorch_sparse/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('a9e194cddc17481001ac4592a058450493ce13780e8ce3eb54d4f79706e69c91')
+source=("$pkgname-$pkgver::https://github.com/rusty1s/pytorch_sparse/archive/refs/tags/$pkgver.tar.gz" "0001_add_glog_export_flags.patch")
+sha256sums=('a9e194cddc17481001ac4592a058450493ce13780e8ce3eb54d4f79706e69c91'
+'9c3ee90e18a80c110abffd28cd3323794ec21f43c026ae1034e8aea2e957d9f3')
 
 _pkgname=pytorch_sparse
 
+prepare() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+  patch -p0 -i ../0001_add_glog_export_flags.patch
+}
+
 build() {
   cd "${srcdir}/${_pkgname}-${pkgver}"
+  unset CFLAGS
+  unset CXXFLAGS
   python -m build --wheel --no-isolation
 }
 
