@@ -1,13 +1,13 @@
 # Maintainer: acxz <akashpatel2008 at yahoo dot com>
 pkgname=openvsp
-pkgver=3.36.0
+pkgver=3.39.1
 pkgrel=1
-pkgdesc='OpenVSP allows the user to create a 3D model of an aircraft defined by
-         common engineering parameters.'
+pkgdesc='A parametric aircraft geometry tool'
 arch=('i686' 'x86_64')
-url='http://www.openvsp.org'
+url='https://openvsp.org'
 license=('NASA OPEN SOURCE AGREEMENT VERSION 1.3')
 depends=('cblas'
+	 'clipper2'
          'code-eli'
          'cpptest'
          'eigen'
@@ -23,9 +23,9 @@ optdepends=('doxygen: generate documentation'
             'swig: build interface to APIs')
 makedepends=('cmake' 'unzip')
 _name=OpenVSP-OpenVSP_${pkgver}
-source=("${pkgname}-${pkgver}"::"https://github.com/OpenVSP/OpenVSP/archive/OpenVSP_${pkgver}.tar.gz"
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/OpenVSP/OpenVSP/archive/OpenVSP_${pkgver}.tar.gz"
         "format.patch"::"https://patch-diff.githubusercontent.com/raw/OpenVSP/OpenVSP/pull/221.patch")
-sha256sums=('e568bba08e91bb9c6400848a3c3df206a892463f9e0385c6fda3b00ac51fd25c'
+sha256sums=('ba42e2bad11f086787fb06eee2300c8a2a106d410791508447a380131e576fb2'
             'SKIP')
 
 prepare() {
@@ -44,7 +44,7 @@ build() {
   cmake ../${_name}/Libraries \
         -DCMAKE_PREFIX_PATH='/usr' \
         -DVSP_USE_SYSTEM_ADEPT2=false \
-        -DVSP_USE_SYSTEM_CLIPPER2=false \
+        -DVSP_USE_SYSTEM_CLIPPER2=true \
         -DVSP_USE_SYSTEM_CMINPACK=false \
         -DVSP_USE_SYSTEM_CODEELI=false \
         -DVSP_USE_SYSTEM_CPPTEST=true \
@@ -56,6 +56,8 @@ build() {
         -DVSP_USE_SYSTEM_GLM=true \
         -DVSP_USE_SYSTEM_LIBIGES=false \
         -DVSP_USE_SYSTEM_LIBXML2=true \
+	-DVSP_USE_SYSTEM_OPENABF=false \
+	-DVSP_USE_SYSTEM_PINOCCHIO=false \
         -DVSP_USE_SYSTEM_STEPCODE=false \
         -DVSP_USE_SYSTEM_TRIANGLE=false
 
