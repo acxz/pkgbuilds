@@ -2,7 +2,7 @@
 # Contributor: K. Morton <pryre.dev@outlook.com>
 # Contributor: Anselmo L. S. Melo <anselmo.melo@intel.com>
 pkgname=qgroundcontrol
-pkgver=4.4.0
+pkgver=4.4.2
 pkgrel=1
 pkgdesc="Micro air vehicle ground control station."
 arch=('x86_64')
@@ -98,7 +98,7 @@ prepare() {
 build() {
   mkdir -p "${srcdir}/${pkgname}-${pkgver}/build"
   cd "$srcdir/${pkgname}-${pkgver}/build"
-  qmake ..
+  CXXFLAGS=-Wno-error=template-id-cdtor qmake ..
   make
 }
 
