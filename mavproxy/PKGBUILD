@@ -1,8 +1,7 @@
 # Maintainer: Achmad Fathoni <fathoni DOT id AT gmail DOT com>
 
 pkgname=mavproxy
-_pkgname=MAVProxy
-pkgver=1.8.67
+pkgver=1.8.71
 pkgrel=1
 pkgdesc='MAVLink proxy and command line ground station.'
 arch=('any')
@@ -10,15 +9,15 @@ url='https://ardupilot.org/mavproxy'
 license=('GPL3')
 depends=(python python-pymavlink python-opencv)
 makedepends=(python python-setuptools)
-source=("https://files.pythonhosted.org/packages/source/${_pkgname::1}/$_pkgname/$_pkgname-$pkgver.tar.gz")
-sha256sums=('d1afe3f3a5131f998760de0f0dc6893238ba8d0ed7c0e97db3358bf15cf8b0ae')
+source=("https://files.pythonhosted.org/packages/c8/23/a98a9426dd5ce55076b1669473bca0474affe19173197d31aab3d760c976/mavproxy-1.8.71.tar.gz")
+sha256sums=('d8fe81fd98bb39e719ee7473e4cbceacd777c8b867df3136e6f81a5444feeb7d')
 
 build() {
-  cd "${_pkgname}-${pkgver}"
+  cd "${pkgname}-${pkgver}"
   python setup.py build
 }
 
 package() {
-  cd "${_pkgname}-${pkgver}"
+  cd "${pkgname}-${pkgver}"
   python setup.py install --root="$pkgdir" --optimize=1
 }
