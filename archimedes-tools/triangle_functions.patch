@@ -1,0 +1,13 @@
+--- triangle.c.orig	2005-07-29 00:11:32.000000000 +0200
++++ triangle.c.new	2025-05-14 22:57:38.610943287 +0200
+@@ -360,8 +360,8 @@
+ /* A few forward declarations.                                               */
+ 
+ #ifndef TRILIBRARY
+-char *readline();
+-char *findfield();
++char *readline(char *string, FILE *infile, char *infilename);
++char *findfield(char *string);
+ #endif /* not TRILIBRARY */
+ 
+ /* Labels that signify the result of point location.  The result of a        */

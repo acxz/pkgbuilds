@@ -1,0 +1,11 @@
+--- showme.c.orig	2005-07-28 17:44:26.000000000 +0200
++++ showme.c.new	2025-05-14 23:04:25.076290384 +0200
+@@ -107,7 +107,7 @@
+ 
+ /* A necessary forward declaration.                                          */
+ 
+-int load_image();
++int load_image(int inc, int image);
+ 
+ Display *display;
+ int screen;
