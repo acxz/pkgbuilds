@@ -1,0 +1,24 @@
+diff -ura octomap-1.10.0.orig/octomap/include/octomap/OcTreeKey.h octomap-1.10.0.new/octomap/include/octomap/OcTreeKey.h
+--- octomap-1.10.0.orig/octomap/include/octomap/OcTreeKey.h	2025-07-04 12:46:08.736803128 +0200
++++ octomap-1.10.0.new/octomap/include/octomap/OcTreeKey.h	2025-07-04 12:41:52.669078078 +0200
+@@ -37,7 +37,7 @@
+ /* According to c++ standard including this header has no practical effect
+  * but it can be used to determine the c++ standard library implementation.
+  */
+-#include <ciso646>
++#include <version>
+ 
+ #include <assert.h>
+ 
+diff -ura octomap-1.10.0.orig/octomap/src/Pointcloud.cpp octomap-1.10.0.new/octomap/src/Pointcloud.cpp
+--- octomap-1.10.0.orig/octomap/src/Pointcloud.cpp	2025-07-04 12:46:08.738439105 +0200
++++ octomap-1.10.0.new/octomap/src/Pointcloud.cpp	2025-07-04 12:41:53.310878043 +0200
+@@ -34,7 +34,7 @@
+ /* According to c++ standard including this header has no practical effect
+  * but it can be used to determine the c++ standard library implementation.
+  */ 
+-#include <ciso646>
++#include <version>
+ 
+ #if defined(_MSC_VER) || defined(_LIBCPP_VERSION)
+   #include <algorithm>

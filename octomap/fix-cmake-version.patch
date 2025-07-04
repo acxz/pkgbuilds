@@ -1,0 +1,9 @@
+diff -ura octomap-1.10.0.orig/CMakeLists.txt octomap-1.10.0.new/CMakeLists.txt
+--- octomap-1.10.0.orig/CMakeLists.txt	2025-07-04 12:46:08.734930419 +0200
++++ octomap-1.10.0.new/CMakeLists.txt	2025-07-04 12:45:01.142613588 +0200
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+ PROJECT( octomap-distribution )
+ 
+ ENABLE_TESTING()  # enable CTest environment of subprojects

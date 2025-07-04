@@ -15,8 +15,18 @@ makedepends=('cmake')
 provides=('octomap')
 conflicts=('octomap-git')
 options=('staticlibs')
-source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/OctoMap/octomap/archive/v${pkgver}.tar.gz")
-sha256sums=('8da2576ec6a0993e8900db7f91083be8682d8397a7be0752c85d1b7dd1b8e992')
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/OctoMap/octomap/archive/v${pkgver}.tar.gz"
+        "fix-ciso646-header.patch"
+        "fix-cmake-version.patch")
+sha256sums=('8da2576ec6a0993e8900db7f91083be8682d8397a7be0752c85d1b7dd1b8e992'
+            'SKIP'
+            'SKIP')
+
+prepare() {
+    cd "$srcdir/octomap-$pkgver"
+    patch -Np1 -i ../fix-ciso646-header.patch
+    patch -Np1 -i ../fix-cmake-version.patch
+}
 
 build() {
     cd "$srcdir/octomap-$pkgver/octomap"
